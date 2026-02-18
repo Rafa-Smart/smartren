@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.app {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("/images/pattern.png");
+  background-repeat: repeat;
+  background-size: 220px;
+}
+
+body {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+
+  /* Pattern repeat */
+  background-image: url("/images/pattern.png");
+  background-repeat: repeat;
+  background-size: 220px;
+
+  /* Overlay gradient supaya elegan */
+  background-color: #065f46;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Glass effect */
+.glass {
+  backdrop-filter: blur(10px);
+  background: rgba(6, 95, 70, 0.6);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+/* Responsive flex */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-img img {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+}
