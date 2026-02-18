@@ -9,7 +9,7 @@ function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://api.github.com/repos/Rafa-Smart/ziekirplus/releases/latest")
+    fetch("https://api.github.com/repos/Rafa-Smart/smartren/releases/latest")
       .then((res) => res.json())
       .then((data) => {
         if (data.assets && data.assets.length > 0) {
@@ -17,14 +17,14 @@ function Home() {
           console.log(data.assets[0].browser_download_url)
         } else {
           setDownloadUrl(
-            "https://github.com/Rafa-Smart/ziekirplus/releases/download/latest/ziekirplus.apk",
+            "https://github.com/Rafa-Smart/smartren/releases/download/latest/ziekirplus.apk"
           );
         }
         setLoading(false);
       })
       .catch(() => {
         setDownloadUrl(
-          "https://github.com/Rafa-Smart/ziekirplus/releases/download/latest/ziekirplus.apk",
+          "https://github.com/Rafa-Smart/smartren/releases/download/latest/ziekirplus.apk",
         );
         setLoading(false);
       });
@@ -645,7 +645,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/download" element={<Home />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
