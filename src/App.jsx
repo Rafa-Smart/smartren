@@ -3,7 +3,7 @@ import image from "./assets/images/ramadhan5.png";
 import smakzieLogo from "./assets/images/logo_smakzie.png";
 import ziekirLogo from "./assets/images/logo_ziekir.png";
 import NotFound from "./components/NotFound";
-import { BrowserRouter as Router, Routes, Route,createBrowserRouter, } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route,createBrowserRouter, Navigate, } from 'react-router-dom';
 function Home() {
   const [downloadUrl, setDownloadUrl] = useState("#");
   const [loading, setLoading] = useState(true);
