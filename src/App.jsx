@@ -3,7 +3,7 @@ import image from "./assets/images/ramadhan5.png";
 import smakzieLogo from "./assets/images/logo_smakzie.png";
 import ziekirLogo from "./assets/images/logo_ziekir.png";
 import NotFound from "./components/NotFound";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route,createBrowserRouter, } from 'react-router-dom';
 function Home() {
   const [downloadUrl, setDownloadUrl] = useState("#");
   const [loading, setLoading] = useState(true);
@@ -641,16 +641,23 @@ function Home() {
   );
 }
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Navigate to="/download" replace />,
+  },
+  {
+    path: "/download",
+    element: <Home />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
+]);
+
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Navigate to="/download" replace />} />
-        <Route path="/download" element={<Home />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
