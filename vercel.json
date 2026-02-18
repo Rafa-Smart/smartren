@@ -1,10 +1,6 @@
 {
   "routes": [
     {
-      "src": "^/$",
-      "dest": "/download"
-    },
-    {
       "src": "/(.*)",
       "dest": "/index.html"
     }

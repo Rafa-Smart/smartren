@@ -645,7 +645,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/download" />} />
+        <Route path="/" element={<Navigate to="/download" replace />} />
         <Route path="/download" element={<Home />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
